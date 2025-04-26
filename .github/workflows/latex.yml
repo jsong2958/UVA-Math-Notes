@@ -1,42 +1,46 @@
-# This is a basic workflow to help you get started with Actions
+name: Build LaTeX PDF
 
-name: LaTeX PDF Compiler
-
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: 
-        - main
+    branches:
+      - main
   pull_request:
-    branches: [ "main" ]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  build-pdf:
+    name: Compile LaTeX to PDF
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+    # Step 1: Checkout the repository
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
-      - name: Set up LaTex
-        run: sudo apt-get install texlive-full
+    # Step 2: Set up TeX Live environment
+    - name: Install TeX Live and required packages
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-latex-recommended texlive-latex-extra texlive-bibtex-extra biber
 
-      # Runs a set of commands using the runners shell
-      - name: Compile LaTex to PDF
-        run: |
-          pdflatex -interaction=nonstopmode main.tex
-          pdflatex -interaction=nonstopmode main.tex
+    # Step 3: Compile LaTeX to PDF (First Pass)
+    - name: First LaTeX Compilation
+      run: xelatex -interaction=nonstopmode main.tex || true
 
-      - name : Upload PDF
-        uses : actions/upload-artifact@4
-        with:
-          path: "*.pdf"
+    # Step 4: Run Biber for Bibliography
+    - name: Run Biber
+      run: biber main || true
+
+    # Step 5: Compile LaTeX to PDF (Second Pass)
+    - name: Second LaTeX Compilation
+      run: xelatex -interaction=nonstopmode main.tex || true
+
+    # Step 6: Compile LaTeX to PDF (Final Pass)
+    - name: Final LaTeX Compilation
+      run: xelatex -interaction=nonstopmode main.tex || true
+
+    # Step 7: Upload the artifact
+    - name: Upload PDF
+      uses: actions/upload-artifact@v3
+      with:
+        name: main-pdf
+        path: main.pdf
