@@ -1,5 +1,6 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage{enumitem}
 \usepackage{amsfonts}
 \usepackage{etoolbox}
@@ -12,10 +13,9 @@
 \newcommand{\mm}[1]{\(#1\)}
 
 % Theorems
-\newtheorem{defn}{Definition}[section]
-\newenvironment{definition}[1]
-{\begin{defn}{\term{{(#1).}}}}
-{\end{defn}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{corollary}{Corollary}[section]
 
 % List
 

@@ -14,7 +14,7 @@
 
 A vector taught in previous courses may have defined one as a quantity with a magnitude and direction, commonly represented as an arrow. Here, we define what a vector is rigorously.
 
-\begin{definition}{Vector Space}
+\begin{definition}[Vector Space]
 A \term{vector space} V over a field F is a set in which two operations, addition and scalar multiplication, are defined so that for each pair of elements \mm{x, y \in V}, the sum \mm{x + y} is also in V, and for any scalar \mm{c \in F}, the product cx is also an element of V, such that the following axioms hold:
 \end{definition}
 
@@ -34,11 +34,41 @@ A \term{vector space} V over a field F is a set in which two operations, additio
 
 \textbf{Vector Space Examples}
 \begin{itemize}
-    \item \textbf{N-tuples}: \mm{(a_1, a_2, a_3,...,a_n), a_n \in F}. The set of n-tuples with n entries of \mm{F} is the set \mm{F^n}
-    \item \textbf{Matrices}: An m x n matrix with entry \mm{a_ij}, where m is the row and n is the column.
+    \item \textbf{N-tuples}: \mm{(a_1, a_2, a_3,...,a_n), a_n \in F}. The set of n-tuples with n entries of \mm{F} is the set \mm{F^n}.
+    \item \textbf{Matrices}: An m x n matrix with entry \mm{a_{i_j}}, where m is the row and n is the column.\\
+    \[
+    \begin{pmatrix}
+        a_{11} & a_{12} & \cdots & a_{1n} \\
+        a_{21} & a_{22} & \cdots & a_{2n} \\
+        \vdots & \vdots & \cdots & \vdots \\ 
+        a_{m1} & a_{m2} & \cdots & a_{mn}
+    \end{pmatrix}
+    \]
+    \item \textbf{Functions}: Let \mm{S} be a nonempty set and \mm{F} be any field. Denote \mm{F(S, F)} be the set of all functions that maps from \mm{S} to \mm{F}.
+    \item \textbf{Polynomials}: Denote P(\mm{F}) as the set of all polynomials with coefficients from \mm{F}.
+    \[
+        f(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1 x + a_0
+    \]
 \end{itemize}
 
+\mm{\star} These are all vector spaces because they are sets that hold the addition and scalar multiplication operations.
 
+\begin{theorem}[Cancellation Law for Vector Addition]
+If \mm{x, y, z \in V}, such that \mm{x + z = y + z}, then \mm{x = y}
+\end{theorem}
+\begin{proof}
+    By (4), there exists a vector v such that \mm{z + v = 0}. \\
+    Thus, \[x + 0 = x \, (3) = x + (z + v) = (x + z) + v \, (2) = (y + z) + v, = y + (z + v) \, (2) = y + 0 = y \, (3)\]
+\end{proof}
 
+\begin{corollary}
+    The vector 0 in (3) is unique
+\end{corollary}
+\begin{proof}
+    Consider \mm{0'}.
+    \[
+    0 = 0 + 0' \, (3) = 0'
+    \]
+\end{proof}
 
 \end{document}
