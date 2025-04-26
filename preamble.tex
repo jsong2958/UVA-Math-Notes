@@ -1,14 +1,22 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{enumitem}
+\usepackage{amsfonts}
+\usepackage{etoolbox}
+
 \usepackage[margin=1in]{geometry}
+
+\setlength{\parindent}{0pt}
 
 % Commands
 \newcommand{\term}[1]{\textbf{\emph{#1}}}
 \newcommand{\mm}[1]{\(#1\)}
 
 % Theorems
-\newtheorem{definition}{Definition}[section]
+\newtheorem{defn}{Definition}[section]
+\newenvironment{definition}[1]
+{\begin{defn}{\term{{(#1).}}}}
+{\end{defn}}
 
 % List
 

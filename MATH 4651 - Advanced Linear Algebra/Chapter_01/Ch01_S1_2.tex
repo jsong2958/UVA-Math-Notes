@@ -14,15 +14,25 @@
 
 A vector taught in previous courses may have defined one as a quantity with a magnitude and direction, commonly represented as an arrow. Here, we define what a vector is rigorously.
 
-\begin{definition}
+\begin{definition}{Vector Space}
 A \term{vector space} V over a field F is a set in which two operations, addition and scalar multiplication, are defined so that for each pair of elements \mm{x, y \in V}, the sum \mm{x + y} is also in V, and for any scalar \mm{c \in F}, the product cx is also an element of V, such that the following axioms hold:
 \end{definition}
 
-
 \begin{axioms}
-    \item ds
-    \item
+    \item For all \mm{x, y \in V, x + y = y + x}
+    \item For all \mm{x, y, z \in V, (x + y) + z = x + (y + z)}
+    \item There exists the zero vector in V, denoted \mm{0}, such that \mm{x + 0 = x, \forall x \in V}
+    \item For each \mm{x \in V, \exists y \in V} such that \mm{x + y = 0}
+    \item For each x in V, \mm{1x = x}
+    \item For each scalar \mm{a, b \in F} and each element \mm{x \in V}, \mm{(ab)x = a(bx)}
+    \item For each element \mm{a \in F}, and each pair of elements \mm{x, y \in V}, \mm{a(x + y) = ax + ay}
+    \item For each pair of scalars \mm{a, b \in F} and each element \mm{x \in V, (a + b)x = ax + bx}
 \end{axioms}
+
+
+\noindent These are the axioms that build the definition of a vector space.
+
+Elements of F are scalars, elements of V are vectors. Most cases, the vector space is over the field \mm{\mathbb{R}} or \mm{\mathbb{C}}
 
 
 \end{document}
