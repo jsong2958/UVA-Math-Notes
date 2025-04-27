@@ -1,0 +1,36 @@
+\documentclass{article}
+
+\input{preamble}
+
+\title{Chapter 1, Section 1.3}
+\author{Joseph Song}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Subspaces}
+
+\begin{definition}[Subspace]
+A subset $W$ of a vector space $V$ over a field $F$ is a \term{subspace} if $W$ is a vector space over $F$ with the operations defined on $V$. The subspace $\{ \emph{0} \}$ is called the \term{zero subspace} of $V$.
+\end{definition}
+
+The following is the theorem to prove if a subset is a subspace of $V$:
+
+\begin{theorem}
+    Let $W$ be a subset of the vector space $V$. Then $W$ is a subspace of $V$ if and only if the following hold:
+\end{theorem}
+\begin{enumerate}[label=(\arabic*)]
+    \item $0 \in W$
+    \item $x + y \in W$, for $x, y \in W$
+    \item $cx \in W$, for $c \in \mathbb{F}$ and $x \in W$
+\end{enumerate}
+\begin{example}[Polynomials]
+\end{example}
+For $n \in \mathbb{N}$, let $P_n(F)$ be the set containing all the polynomials in $P(F)$ having degree less than or equal to n.
+\\
+To show that it is a subspace, we use the theorem and see if the three condition holds. The zero polynomial has degree $-1 \leq n, \forall n \in \mathbb{N}$.
+The sum of two polynomials with degree less than or equal to n still has the degree less than or equal to n, along with scalar multiplication.
+
+\end{document}

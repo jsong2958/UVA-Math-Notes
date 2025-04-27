@@ -1,0 +1,79 @@
+\documentclass{article}
+
+\input{preamble}
+
+\title{Chapter 1, Section 1.2}
+\author{Joseph Song}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Vector Spaces}
+
+A vector taught in previous courses may have defined one as a quantity with a magnitude and direction, commonly represented as an arrow. Here, we define what a vector is rigorously.
+
+\begin{definition}[Vector Space]
+A \textbf{vector space} $V$ over a field $F$ is a set in which two operations, addition and scalar multiplication, are defined so that for each pair of elements $x, y \in V$, the sum $x + y$ is also in $V$, and for any scalar $c \in F$, the product $cx$ is also an element of $V$, such that the following axioms hold:
+\end{definition}
+
+\begin{enumerate}[label=(\arabic*)]
+    \item For all $x, y \in V$, $x + y = y + x$
+    \item For all $x, y, z \in V$, $(x + y) + z = x + (y + z)$
+    \item There exists the zero vector in $V$, denoted $0$, such that $x + 0 = x$, $\forall x \in V$
+    \item For each $x \in V$, there exists $y \in V$ such that $x + y = 0$
+    \item For each $x$ in $V$, $1x = x$
+    \item For each scalar $a, b \in F$ and each element $x \in V$, $(ab)x = a(bx)$
+    \item For each scalar $a \in F$, and each pair of elements $x, y \in V$, $a(x + y) = ax + ay$
+    \item For each pair of scalars $a, b \in F$ and each element $x \in V$, $(a + b)x = ax + bx$
+\end{enumerate}
+
+$\star$ Elements of $F$ are scalars, elements of $V$ are vectors. In most cases, the vector space is over the field $\mathbb{R}$ or $\mathbb{C}$.\newline
+
+\textbf{Vector Space Examples}
+\begin{itemize}
+    \item \textbf{N-tuples}: $(a_1, a_2, a_3, \ldots, a_n)$, $a_n \in F$. The set of n-tuples with $n$ entries from $F$ is the set $F^n$.
+    \item \textbf{Matrices}: An $m \times n$ matrix with entries $a_{ij}$, where $m$ is the row and $n$ is the column.\\
+    \[
+    \begin{pmatrix}
+        a_{11} & a_{12} & \cdots & a_{1n} \\
+        a_{21} & a_{22} & \cdots & a_{2n} \\
+        \vdots & \vdots & \ddots & \vdots \\ 
+        a_{m1} & a_{m2} & \cdots & a_{mn}
+    \end{pmatrix}
+    \]
+    \item \textbf{Functions}: Let $S$ be a nonempty set and $F$ be any field. Denote $F(S, F)$ as the set of all functions that map from $S$ to $F$.
+    \item \textbf{Polynomials}: Denote $P(F)$ as the set of all polynomials with coefficients from $F$.
+    \[
+        f(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1 x + a_0
+    \]
+    Let the zero polynomial to have degree -1
+\end{itemize}
+
+$\star$ These are all vector spaces because they are sets that satisfy the addition and scalar multiplication operations.
+
+\begin{theorem}[Cancellation Law for Vector Addition]
+If $x, y, z \in V$, such that $x + z = y + z$, then $x = y$.
+\end{theorem}
+
+\begin{proof}
+    By (4), there exists a vector $v$ such that $z + v = 0$. \\
+    Thus,
+    \[
+    x + 0 = x \quad (3) = x + (z + v) = (x + z) + v \quad (2) = (y + z) + v = y + (z + v) \quad (2) = y + 0 = y \quad (3)
+    \]
+\end{proof}
+
+\begin{corollary}
+The vector $0$ in (3) is unique.
+\end{corollary}
+
+\begin{proof}
+    Consider $0'$.
+    \[
+    0 = 0 + 0' \quad (3) = 0'
+    \]
+\end{proof}
+
+\end{document}
