@@ -7,10 +7,84 @@
 \date{}
  
 \begin{document}
+
  
 \maketitle
 
 \section{Linear Combinations}
-another day another debug session....
- 
+\begin{definition}[Linear Combination]
+    Let $S$ be a nonempty subset of the vector space $V$. A vector $v \in V$ is a \term{linear combination} of vectors in $S$ if there exists a finite numbers of vectors $u_1, u_2, \dots, u_n \in S$ and coefficient scalars $c_1, c_2,\dots, c_n \in \mathbb{F}$ such that $v = c_1v_1 + c_2v_2+\dots+c_nv_n$.
+\end{definition}
+
+Notice how the zero vector exists in any $V$, so the zero vector is a linear combination of the vectors in any $S$.
+
+\begin{example}[Polynomials]
+\end{example}
+
+Is $2x^3 -2x^2+12x-6$ a linear combination of $x^3-2x^2-5x-3$ and $3x^3-5x^2-4x-9$?
+\\
+There must exists scalars $a$ and $b$ such that:
+\[
+2x^3 -2x^2+12x-6 = a(x^3-2x^2-5x-3) + b(3x^3-5x^2-4x-9)
+\]
+Distributing:
+\[
+2x^3 -2x^2+12x-6 = ax^3-2ax^2-5ax-3a + (3bx^3-5bx^2-4bx-9b)
+\]
+Setting the coefficients in a system of equations:
+
+\begin{align*}
+   a+3b=2 \\
+   -2a-5b=2 \\
+   -5a-4b=12 \\
+   -3a-9b=-6
+\end{align*}
+
+Solve for $a$ and $b$:
+%\p
+\begin{align*}
+\begin{array}{c}
+    2a+6b=4 \\
+   -2a-5b=2 \\
+   \hline
+   b = 2\\ 
+   \\
+   a + 3(2) = 2 \implies a = -4
+\end{array}
+\end{align*}
+
+
+Plug into the other equations:
+\[
+-2(-4) - 5 (2) = 8 - 10 = -2 \neq 2
+\]
+
+We have reached a contradiction, so it is NOT a linear combination
+
+\begin{example}[Vectors]
+\end{example}
+
+Is (2,1,9) a linear combination of (1,2,0) and (0,-1,3)?
+\begin{align*}
+    a = 2\\
+    2a - b = 1\\
+    3b = 9
+\end{align*}
+
+$a = 2$ and $b = 3$, so we verify:
+\[
+2(2) - 1(3) = 1
+\]
+
+So it is a linear combination.
+
+\section{Span}
+\begin{definition}
+    Let $S$ be a nonempty subset of the vector space $V$. The \term{span} of $S$, denoted $span(S)$, is the set of all linear combinations of the vectors in $S$. Define $span(\emptyset) = 0$.
+\end{definition}
+
+\begin{theorem}
+    The span of any subset of $V, S$, is a subspace of $V$. 
+\end{theorem}
+
 \end{document}
