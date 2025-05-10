@@ -84,7 +84,31 @@ So it is a linear combination.
 \end{definition}
 
 \begin{theorem}
-    The span of any subset of $V, S$, is a subspace of $V$.
+    The span of any subset $S$ of $V,$ is a subspace of $V$. Additionally, any subspace of $V$ that contains $S$ must also contain $span(S)$.
 \end{theorem}
+
+\begin{proof}
+Let $z \in \operatorname{span}(S)$. Then $0z = 0$. Let $x,y \in \operatorname{span}(S)$. That means there exists $u_1, u_2, \dots, u_n, v_1, v_2, \dots, v_n \in S$ such that $x = a_1u_1 + a_2u_2 + \dots+a_nu_n$ and $y = b_1v_1 + b_2v_2+\dots+b_nv_n$ for scalars $a_n,b_n \in \mathbb{F}$.
+
+Then $x + y = a_1u_1 + a_2,u_2 + \dots+a_nu_n + b_1v_1 + b_2v_2+\dots+b_nv_n$ is an element of $\operatorname{span}(S)$.
+
+For any $c \in \mathbb{F}$, $cx = (ca_1)u_1 + (ca_2)u_2 + \dots+(ca_n)u_n$ which is an element of $\operatorname{span}(S)$
+\\
+\\
+Let $W$ be a subspace. Let $w \in \operatorname{span}(S)$. Then $w = \sum a_nu_n$ for $u_n \in S$. But since $S \in W$, $u_n \in W \implies w \in W$, so $\operatorname{span}(S) \subseteq W$.
+
+\end{proof}
+
+\begin{definition}
+    Subset $S$ spans $V$ if $\operatorname{span}(S) = V$
+\end{definition}
+
+Prove that $\operatorname{span}(\{x\}) = \{ax: a \in \mathbb{F}\}$ for any vector $x$.
+
+\begin{proof}
+    Want to show $\forall v \in \operatorname{span}(\{x\}), v \in \{ax: a \in \mathbb{F}\}$. $\forall v \in \operatorname{span}(\{x\}), \exists c \in \mathbb{F}$ such that $v = cx$, which is the definition of $\operatorname{span}(\{x\})$
+
+\end{proof}
+
 
 \end{document}
