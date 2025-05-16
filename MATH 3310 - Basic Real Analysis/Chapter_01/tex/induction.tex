@@ -18,7 +18,6 @@ Let $S \subseteq \mathbb{N}$. If S contains 1, and for any element $n \in S$, $n
 
 \begin{example}
 Let $y_1 = 6$, and define $y_{n+1} = (2y_n-6)/3$.
-\\
 Prove $y_n > -6, \forall n \in \mathbb{N}$.
 \end{example}
 \begin{proof}
@@ -45,6 +44,19 @@ Prove $y_n > -6, \forall n \in \mathbb{N}$.
     \end{align*}
 \end{proof}
 
+Use induction again to show the sequence is decreasing.
+\begin{proof}
+    Want to show that $y_n > y_{n+1}$ for all n in the natural numbers. \\
+    The base case: $y_1 > y_{2} \implies 6 > 2$. \\
+    Now with $y_n > y_{n+1}$, show $y_{n+1} > y_{n+2}$.
+    \begin{align*}
+        & y_n > y_{n+1} \\
+        &\Rightarrow\quad 2y_n > 2y_{n+1} \\
+        &\Rightarrow\quad2y_n -6 > 2y_{n+1} - 6 \\
+        &\Rightarrow\quad (2y_n - 6) /3 > (2y_{n+1} - 6)/3 \\
+        &\Rightarrow\quad y_{n+1} > y_{n+2}
+    \end{align*}
+\end{proof}
 
 \end{document}
 
