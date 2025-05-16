@@ -1,0 +1,51 @@
+\documentclass{article}
+
+\include{preamble}
+
+\title{Induction}
+\author{Joseph Song}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Induction}
+Let $S \subseteq \mathbb{N}$. If S contains 1, and for any element $n \in S$, $n + 1 \in S$, then $S = \mathbb{N}$.
+\\
+\\
+\textbf{Proof by induction:} show the base case ($n = 0, 1$). Then with the inductive hypothesis, the case where it holds for $n$, show it holds for $n + 1$. 
+
+\begin{example}
+Let $y_1 = 6$, and define $y_{n+1} = (2y_n-6)/3$.
+\\
+Prove $y_n > -6, \forall n \in \mathbb{N}$.
+\end{example}
+\begin{proof}
+    First, we prove the base case, $(n=1)$. In this case, it is given. $y_1=6>-6$.
+    Then, with the inductive hypothesis, show it holds for $n+1$.
+    The inductive hypothesis is we claim $y_n > -6$, because it holds for $n$. Using that, derive $y_{n+1} > -6$ as well to complete the proof.
+    \\
+    \\
+    With some scratch work: 
+    \begin{align*}
+         &y_{n+1} = (2y_n-6)/3 > -6 \\
+         &\Rightarrow\quad 2y_n-6 > -18 \\
+         &\Rightarrow\quad 2y_n > - 12 \\ 
+         &\Rightarrow\quad y_n > -6
+    \end{align*}
+    We get $y_n > -6$ at the end, but we want to use that in the beginning. So our inductive step goes like this:
+    \begin{align*}
+       &y_n > - 6\\
+       &\Rightarrow\quad 2y_n > -12 \\
+       &\Rightarrow\quad 2y_n - 6 > -18 \\
+       &\Rightarrow\quad (2y_n - 6)/3 > -6 \\
+       &\Rightarrow\quad (2y_n - 6)/3 = y_{n+1} \\
+       &\Rightarrow\quad y_{n+1} > -6
+    \end{align*}
+\end{proof}
+
+
+\end{document}
+
+
