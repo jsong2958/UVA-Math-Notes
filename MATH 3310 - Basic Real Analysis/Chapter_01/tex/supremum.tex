@@ -41,7 +41,7 @@
     Given two nonempty, bounded above sets , A and B, define $A + B = \{a + b : a \in A\ and\ b\in B\}$. Prove $\operatorname{sup}(A+B) = \operatorname{sup}A + \operatorname{sup}B$.
 \end{example}
 \begin{proof}
-    
+    Let $s = \operatorname{sup}A$ and $t = \operatorname{sup}B$. We first show that $s + t$ is an upper bound for $A + B$. $a \leq s, \forall\ a \in A$, and $b \leq t, \forall\ b \in B$. This implies that $a + b \leq s + t$. Let u be an arbitrary bound for $A+B$. $a + b \leq u\implies b \leq u-a$, and since t is the least upper bound, this implies $t \leq u -a$. Same logic can be applied to get $a \leq u - b \implies s \leq u- b$. $s + t \leq 2u - a - b$, where $2u - a -b$ is an upper bound for A + B, therefore $s + t$ is the least upper bound.
 \end{proof}
 
 \end{document}
